@@ -45,36 +45,12 @@ step-4: insert/append the newElement into the container <br>
 
 ### `Answer:`
 
-Event bubbling is the process in the DOM where an event starts from the target element (the one that triggered the event) and bubbles up through its ancestors until it reaches the root (document). 
+Event bubbling is a mechanism in which an event is propagated from the child element to its parent elements. This means that the event is first captured by the child element, and then propagated up to its parent elements.
 
-More simply, lets a 'button' inside a 'div' and the 'div' inside a section, and then when the 'button' is clicked then event triggered as button -> div -> section -> body -> document -> window
+When an event is captured by an element, it first executes its own event handler, and then checks if it has any parent elements. If it does, it bubbles the event up to the parent element. The event is then captured by the parent element, and so on, until it reaches the window object.
 
-Lets,
-```
-<body>
-  <section id="grandParent"> 
-  <div id="parent"> <button id="child">Click Me</button> </div> 
-  </section>
+The event.stopPropagation() method can be used to prevent the event from bubbling up to the parent element
 
-  <script>
-    document.getElementById("grandParent").addEventListener('click',()=>{
-      console.log("Click happened to grandParent section")
-    });
-    document.getElementById("Parent").addEventListener('click',()=>{
-      console.log("Click happened to Parent div")
-    });
-    document.getElementById("child").addEventListener('click',()=>{
-      console.log("Click happened to button")
-    });
-  </script>
- </body>
-``` 
-  Here, when button is clicked:<br>
-  Click happened to button <br> 
-  Click happened to Parent div <br>
-  Click happened to grandParent section <br>
-  Because event first happened to child button, then bubbles to div, section, body serially.  
-<hr>
 
 ## Q-4. What is **Event Delegation** in JavaScript? Why is it useful?
 
