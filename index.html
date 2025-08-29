@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emergency Hotline Directory</title>
+    <title>Emergency Hotline</title>
+    <!-- external css -->
     <link rel="stylesheet" href="style.css" />
+    <!-- daisyUI cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwindcss cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesome cdn -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -17,30 +21,44 @@
     <style></style>
   </head>
   <body>
+    <!-- header section -->
     <header>
-      <nav class="directory-nav max-w-[1450px] mx-auto flex justify-between items-center px-2 sm:px-8 my-3">
+      <!-- navigation part -->
+      <nav class="max-w-[1450px] mx-auto flex justify-between items-center px-2 sm:px-8 my-3">
         <div class="flex justify-start items-center gap-1 sm:gap-1.5">
           <img src="./assets/logo.png" alt="logo" class="size-9 sm:size-13" />
           <div class="text-[#006747] hind-madurai text-sm sm:text-[22px]">
             <h1 class="font-bold">Emergency</h1>
             <h1 class="font-bold sm:-mt-1">Service</h1>
           </div>
+          <!-- <h1 class="text-[#006747] font-bold sm:font-extrabold text-base sm:text-xl">Emergency<br />Service</h1> -->
         </div>
-        <div class="directory-counts-group grid grid-cols-3 justify-end items-center gap-1.5 sm:gap-3 font-bold text-xs sm:text-base inter-font">
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 bg-[#41ff6b1a] rounded-xl sm:rounded-[50px] px-3 sm:px-4 py-1 sm:py-2.5">
-            <span id="directory-heart-count">0</span><img src="./assets/heart.png" alt="" class="size-5 sm:size-[30px]" />
+        <div
+          class="grid grid-cols-3 justify-end items-center gap-1.5 sm:gap-3 font-bold text-xs sm:text-base inter-font"
+        >
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 bg-[#41ff6b1a] rounded-xl sm:rounded-[50px] px-3 sm:px-4 py-1 sm:py-2.5"
+          >
+            <span id="heart-count">0</span><img src="./assets/heart.png" alt="" class="size-5 sm:size-[30px]" />
           </div>
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 bg-[#41ff6b1a] rounded-xl sm:rounded-[50px] px-3 sm:px-4 py-1 sm:py-2.5">
-            <span id="directory-coin-count">100</span><img src="./assets/coin.png" alt="" class="size-5 sm:size-[30px]" />
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 bg-[#41ff6b1a] rounded-xl sm:rounded-[50px] px-3 sm:px-4 py-1 sm:py-2.5"
+          >
+            <span id="coin-count">100</span><img src="./assets/coin.png" alt="" class="size-5 sm:size-[30px]" />
           </div>
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 bg-[#00A63E] text-white rounded-xl sm:rounded-[50px] px-3 sm:px-4 py-1 sm:py-2.5">
-            <span id="directory-copy-count">0</span>
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2 bg-[#00A63E] text-white rounded-xl sm:rounded-[50px] px-3 sm:px-4 py-1 sm:py-2.5"
+          >
+            <span id="copy-count">0</span>
             <p class="text-[13px]">Copy</p>
           </div>
         </div>
       </nav>
 
-      <div class="directory-hero-section w-full mx-auto bg-[linear-gradient(to_right,#013223_0%,#006747_50%,#013223_100%)] text-center py-3 hind-madurai text-white">
+      <!-- hero section -->
+      <div
+        class="hero-section w-full mx-auto bg-[linear-gradient(to_right,#013223_0%,#006747_50%,#013223_100%)] text-center py-3 hind-madurai text-white"
+      >
         <img src="./assets/logo-dark.png" alt="logo" class="mx-auto size-16 sm:size-[84px] mt-1" />
         <h1 class="font-semibold text-2xl sm:text-[32px] mt-2.5">জরুরি সেবা ডিরেক্টরি</h1>
         <p class="sm:text-lg font-semibold mt-1 px-5">
@@ -50,249 +68,271 @@
       </div>
     </header>
 
+    <!-- main section -->
     <main class="bg-[#41ff6b1a] min-h-[100vh]">
-      <div class="directory-mobile-toggles max-w-[1450px] grid grid-cols-2 gap-4 mx-auto px-4 pt-6 sm:hidden">
-        <button id="directory-hotlines-btn" class="btn rounded-lg hover:border-2 font-bold">
+      <!-- toggle buttons for small/ mobile device -->
+      <div class="max-w-[1450px] grid grid-cols-2 gap-4 mx-auto px-4 pt-6 sm:hidden">
+        <button id="see-hotlines-btn" class="btn rounded-lg hover:border-2 font-bold">
           <i class="fa-solid fa-phone text-red-700"></i>Hotlines
         </button>
-        <button id="directory-call-history-btn" class="btn bg-lime-100 rounded-lg hover:border-2 font-bold">
+        <button id="see-call-history-btn" class="btn bg-lime-100 rounded-lg hover:border-2 font-bold">
           <i class="fa-regular fa-clock text-purple-800"></i>Call History
         </button>
       </div>
-      <div class="directory-main-content max-w-[1450px] mx-auto grid sm:grid-cols-12 px-4 sm:px-8 py-6 sm:py-8">
-        <div id="directory-card-section" class="sm:col-span-6 lg:col-span-8 xl:col-span-9 grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-5 sm:mr-5">
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+      <div class="max-w-[1450px] mx-auto grid sm:grid-cols-12 px-4 sm:px-8 py-6 sm:py-8">
+        <!-- card section -->
+        <div
+          id="card-section"
+          class="sm:col-span-6 lg:col-span-8 xl:col-span-9 grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-5 sm:mr-5"
+        > 
+          <!-- Emergency -->
+          <div class="emergency-card bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#FFE3E2] p-4 rounded-2xl">
                 <img src="./assets/emergency.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">জাতীয় জরুরি সেবা</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">National Emergency Service</h1>
+              <h1 class="service-title font-bold text-xl mb-1">জাতীয় জরুরি সেবা</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">National Emergency Service</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">999</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">999</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">সার্বজনীন</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+          <!-- Police -->
+          <div class="police bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#DFEFFF] p-4 rounded-2xl">
                 <img src="./assets/police.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">পুলিশ</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">Police</h1>
+              <h1 class="service-title font-bold text-xl mb-1">পুলিশ</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">Police</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">999</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">999</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">পুলিশ</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+          <!-- Fire-service -->
+          <div class="fire-service bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#FFE3E2] p-4 rounded-2xl">
                 <img src="./assets/fire-service.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">ফায়ার সার্ভিস</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">Fire Service</h1>
+              <h1 class="service-title font-bold text-xl mb-1">ফায়ার সার্ভিস</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">Fire Service</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">999</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">999</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">ফায়ার</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+          <!-- Ambulance -->
+          <div class="ambulance bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#FFE3E2] p-4 rounded-2xl">
                 <img src="./assets/ambulance.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">অ্যাম্বুলেন্স</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">Ambulance</h1>
+              <h1 class="service-title font-bold text-xl mb-1">অ্যাম্বুলেন্স</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">Ambulance</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">1994-999999</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">1994-999999</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">স্বাস্থ্য</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+          <!-- Women-Child -->
+          <div class="women-child bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#FFE3E2] p-4 rounded-2xl">
                 <img src="./assets/emergency.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">নারী ও শিশু সহায়তা</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">Women & Child Helpline</h1>
+              <h1 class="service-title font-bold text-xl mb-1">নারী ও শিশু সহায়তা</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">Women & Child Helpline</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">109</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">109</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">সহায়তা</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+          <!-- Anti-Corruption -->
+          <div class="corruption bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#FFE3E2] p-4 rounded-2xl">
                 <img src="./assets/emergency.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">দুদক</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">Anti-Corruption</h1>
+              <h1 class="service-title font-bold text-xl mb-1">দুদক</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">Anti-Corruption</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">106</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">106</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">সরকারি</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+          <!-- Electrici-Outage -->
+          <div class="electricity bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#FFE3E2] p-4 rounded-2xl">
                 <img src="./assets/emergency.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">বিদ্যুৎ বিভ্রাট</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">Electricity Outage</h1>
+              <h1 class="service-title font-bold text-xl mb-1">বিদ্যুৎ বিভ্রাট</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">Electricity Outage</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">16216</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">16216</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">বিদ্যুৎ</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+          <!-- Brac -->
+          <div class="brac bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#FFE3E2] p-4 rounded-2xl">
                 <img src="./assets/emergency.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">ব্র্যাক</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">Brac</h1>
+              <h1 class="service-title font-bold text-xl mb-1">ব্র্যাক</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">Brac</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">16445</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">16445</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">এনজিও</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
-          <div class="directory-card bg-white p-8 rounded-xl hind-madurai shadow">
+          <!-- Railway -->
+          <div class="railway bg-white p-8 rounded-xl hind-madurai shadow">
             <div class="flex justify-between items-center">
               <div class="bg-[#FFE3E2] p-4 rounded-2xl">
                 <img src="./assets/emergency.png" alt="" class="size-8" />
               </div>
-              <i class="directory-heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
+              <i class="heart-icon fa-regular fa-heart text-3xl text-gray-500 hover:text-gray-700"></i>
             </div>
             <div class="mt-5">
-              <h1 class="directory-service-title font-bold text-xl mb-1">বাংলাদেশ রেলওয়ে</h1>
-              <h1 class="directory-service-en font-semibold text-lg text-gray-500">Bangladesh Railway</h1>
+              <h1 class="service-title font-bold text-xl mb-1">বাংলাদেশ রেলওয়ে</h1>
+              <h1 class="service font-semibold text-lg text-gray-500">Bangladesh Railway</h1>
             </div>
             <div class="my-4">
-              <h1 class="directory-helpline text-3xl font-semibold mb-1">163</h1>
+              <h1 class="helpline text-3xl font-semibold mb-1">163</h1>
               <div class="w-fit bg-gray-200 text-gray-600 text-sm rounded-[50px] pt-2 pb-1 px-4">পরিবহন</div>
             </div>
             <div class="grid grid-cols-2 justify-between items-center gap-2">
-              <button class="btn directory-copy-btn text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
+              <button class="btn copy text-base rounded-lg text-gray-600 hover:bg-gray-600 hover:text-white">
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
-              <button class="btn directory-call-btn text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
+              <button class="btn call text-base rounded-lg font-normal bg-[#00A63E] text-white hover:bg-green-700">
                 <i class="fa-solid fa-phone"></i> Call
               </button>
             </div>
           </div>
         </div>
 
-        <div id="directory-history-section" class="min-h-[100vh] sm:col-span-6 lg:col-span-4 xl:col-span-3 bg-white py-6 px-5 sm:mt-0 rounded-xl hind-madurai shadow hidden sm:block">
+        <!-- call history section-->
+        <div
+          id="history-section"
+          class="min-h-[100vh] sm:col-span-6 lg:col-span-4 xl:col-span-3 bg-white py-6 px-5 sm:mt-0 rounded-xl hind-madurai shadow hidden sm:block"
+        >
           <div class="flex justify-between items-center font-bold mb-4">
             <div class="flex justify-between items-center gap-2 text-xl font-semibold">
               <i class="fa-regular fa-clock"></i>
               <h1>Call History</h1>
             </div>
-            <button id="directory-clear-btn" class="btn text-base rounded-3xl font-normal bg-[#00A63E] px-5 text-white hover:bg-green-700">
+            <button
+              id="clear-btn"
+              class="btn text-base rounded-3xl font-normal bg-[#00A63E] px-5 text-white hover:bg-green-700"
+            >
               Clear
             </button>
           </div>
-          <div id="directory-history-container"></div>
+          <div id="history-container"></div>
         </div>
       </div>
     </main>
-    <script src="./index-new.js"></script>
+    <script src="./indexnew.js"></script>
   </body>
 </html>
